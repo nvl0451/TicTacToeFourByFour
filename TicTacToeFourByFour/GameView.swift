@@ -77,11 +77,13 @@ class GameView: UIView {
     private func setupGameView() {
         gameField.axis = .vertical
         gameField.spacing = 20
+        gameField.alignment = .center
         
         for i in 0..<4 {
             let newRow = UIStackView()
             newRow.axis = .horizontal
             newRow.spacing = 20
+            newRow.alignment = .center
             newRow.translatesAutoresizingMaskIntoConstraints = false
             
             for j in 0..<4 {
@@ -92,7 +94,7 @@ class GameView: UIView {
                   //  buttons[buttonPos].centerYAnchor.constraint(equalTo: newRow.centerYAnchor)
                 //])
                 
-                if j > 0 {
+                /*if j > 0 {
                     let prev = buttonPos - 1
                     NSLayoutConstraint.activate([
                         buttons[buttonPos].leadingAnchor.constraint(
@@ -100,7 +102,7 @@ class GameView: UIView {
                             constant: 20
                         )
                     ])
-                }
+                }*/
             }
             
             gameField.addArrangedSubview(newRow)
@@ -111,7 +113,7 @@ class GameView: UIView {
         redScore.text = "Red: 0"
         blueScore.text = "Blue: 0"
         moveMessage.text = "It's RED turn"
-        winMessage.text = "temp win msg"
+        winMessage.text = ""
         
         createButtons()
         setupGameView()
@@ -144,8 +146,8 @@ class GameView: UIView {
             
             gameField.topAnchor.constraint(equalTo: winMessage.bottomAnchor, constant: 20),
             gameField.leadingAnchor.constraint(equalTo: leadingAnchor),
-            gameField.trailingAnchor.constraint(equalTo: trailingAnchor),
-            gameField.bottomAnchor.constraint(equalTo: bottomAnchor)
+            gameField.trailingAnchor.constraint(equalTo: trailingAnchor)
+            //gameField.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
     

@@ -50,6 +50,7 @@ class GameModel {
             }
             gameBoard.clearField()
             currentColor = 1
+            currentMove = 0
             return
         }
         
@@ -58,6 +59,7 @@ class GameModel {
             gameBoard.clearField()
             winSender?.getWin(winType: 0)
             currentColor = 1
+            currentMove = 0
         }
     }
     

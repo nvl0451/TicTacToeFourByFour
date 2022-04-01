@@ -44,7 +44,6 @@ class ViewController: UIViewController {
     }
     
     func updateView() {
-        gameView.winMessage.text = ""
         if gameModel.currentColor == 1 {
             gameView.moveMessage.text = "RED turn"
         } else {
